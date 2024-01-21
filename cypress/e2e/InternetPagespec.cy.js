@@ -47,7 +47,11 @@ describe('My first Cypress Tests',() => {
         //Lets find the error banner
         cy.get('#flash')
             .should('be.visible'); //this is the red banner error
-        // verify the error text
+        //contains might be a bad assertion here. Lets try have text
+        //and why the hell format the text value like that? jerk. 
+        cy.get('#flash')
+            .should('have.text',  '\n            Your username is invalid!\n            ×\n          ');
+        // verify the error text - this is not optimal. should have.text or .value is better
         cy.contains('Your username is invalid!');
         //lets close the red error alert banner
         cy.get('.close')
@@ -74,7 +78,11 @@ describe('My first Cypress Tests',() => {
         //Lets find the error banner
         cy.get('#flash')
             .should('be.visible'); //this is the red banner error
-        // verify the error text
+        //contains might be a bad assertion here. Lets try have text
+        //and why the hell format the text value like that? jerk. 
+        cy.get('#flash')
+            .should('have.text',  '\n            Your username is invalid!\n            ×\n          ');
+        // verify the error text - this is not optimal. should have.text or .value is better
         cy.contains('Your username is invalid!');
         //lets close the red error alert banner
         cy.get('.close')
@@ -101,7 +109,11 @@ describe('My first Cypress Tests',() => {
         //this test page will always fail no matter what
         cy.get('#flash')
             .should('be.visible'); //this is the green banner success
-        // verify the Success text
+        //contains might be a bad assertion here. Lets try have text
+        //and why the hell format the text value like that? jerk. 
+        cy.get('#flash')
+            .should('have.text',  '\n            You logged into a secure area!\n            ×\n          ');
+        // verify the error text - this is not optimal. should have.text or .value is better
         cy.contains(' You logged into a secure area!');
         //lets close the green alert banner
         cy.get('.close')
