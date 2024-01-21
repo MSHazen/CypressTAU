@@ -44,8 +44,9 @@ describe('My first Cypress Tests',() => {
         cy.get('.fa')
             .click();
         /* ==== End Cypress Studio ==== */
-        //this test page will always fail no matter what
-        cy.get('#flash'); //this is the red banner error
+        //Lets find the error banner
+        cy.get('#flash')
+            .should('be.visible'); //this is the red banner error
         // verify the error text
         cy.contains('Your username is invalid!');
         //lets close the red error alert banner
@@ -70,8 +71,9 @@ describe('My first Cypress Tests',() => {
         //lets submit the credentials
         //cy.get('.fa').click();
         /* ==== End Cypress Studio ==== */
-        //this test page will always fail no matter what
-        cy.get('#flash'); //this is the red banner error
+        //Lets find the error banner
+        cy.get('#flash')
+            .should('be.visible'); //this is the red banner error
         // verify the error text
         cy.contains('Your username is invalid!');
         //lets close the red error alert banner
@@ -97,7 +99,8 @@ describe('My first Cypress Tests',() => {
         //cy.get('.fa').click();
         /* ==== End Cypress Studio ==== */
         //this test page will always fail no matter what
-        cy.get('#flash'); //this is the green banner success
+        cy.get('#flash')
+            .should('be.visible'); //this is the green banner success
         // verify the Success text
         cy.contains(' You logged into a secure area!');
         //lets close the green alert banner
