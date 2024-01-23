@@ -1,5 +1,11 @@
 describe('My first Cypress Tests',() => {
     //this is my workbook for doing cypress stuff. I will also use it as a cheat sheet in later projects
+    //This baseurl was global in the cypress config but Im now adding tests for another domain
+    //so I will put the baseurl for these tests here
+    before(() => {
+        Cypress.config('baseUrl','https://the-internet.herokuapp.com/')
+    })
+    //baseUrl: "https://the-internet.herokuapp.com/"
 
     it('First Test', () => {
         cy.visit("http://cypress.io")
